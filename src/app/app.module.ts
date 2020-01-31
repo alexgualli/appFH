@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import {Camera} from '@ionic-native/camera/ngx';
 
 import {AndroidFingerprintAuth} from '@ionic-native/android-fingerprint-auth/ngx';
 @NgModule({
@@ -19,6 +20,7 @@ import {AndroidFingerprintAuth} from '@ionic-native/android-fingerprint-auth/ngx
   imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     AndroidFingerprintAuth,
+    Camera,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

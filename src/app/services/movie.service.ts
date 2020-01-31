@@ -17,7 +17,7 @@ export enum SearchType {
 export class MovieService {
   url = 'http://www.omdbapi.com/';
   apiKey = '5ca932a7';    
-  urljson='https://api.myjson.com/bins/b7fn8';
+  urljson='https://api.myjson.com/bins/w23ne';
   constructor(private http: HttpClient) { }
  
   searchData(title: string, type: SearchType): Observable<any> {
@@ -41,8 +41,11 @@ export class MovieService {
   }
 
   getAll(){
-    return this.http.get(`${this.urljson}`).pipe(
-      map(results => results['Search'])
-    );
+    return this.http.get(`${this.urljson}`);
+  }
+
+  getMyMovies(){
+    const path='https://api.myjson.com/bins/10gx8q';
+    return this.http.get(path);    
   }
 }
