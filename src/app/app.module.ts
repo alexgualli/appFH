@@ -13,6 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {Camera} from '@ionic-native/camera/ngx';
 
+
+import {IonicStorageModule} from '@ionic/storage';
+import {File} from '@ionic-native/file/ngx';
+import {WebView} from '@ionic-native/ionic-webview/ngx';
+import {FilePath} from '@ionic-native/file-path/ngx';
+//import {} from '';
+
 import {AndroidFingerprintAuth} from '@ionic-native/android-fingerprint-auth/ngx';
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +28,10 @@ import {AndroidFingerprintAuth} from '@ionic-native/android-fingerprint-auth/ngx
   providers: [
     AndroidFingerprintAuth,
     Camera,
+    File,
+    WebView,
+    FilePath, 
+    IonicStorageModule,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

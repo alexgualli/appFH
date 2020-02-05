@@ -12,8 +12,8 @@
 <ion-content>
 
   <ion-avatar class="avatar">
-      <img [src]="imagePath" *ngIf="imagePath" >
-      <ion-icon (click)="takePicture()" name="md-camera" class="icon"></ion-icon>
+      <img [src]="imagePath" >
+      <ion-icon (click)="selectImage()" name="md-camera" class="icon"></ion-icon>
   </ion-avatar>
 
   <ion-list>
