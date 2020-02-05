@@ -22,6 +22,7 @@ export class AppComponent {
   }
 
   initializeApp() {
+    this.checkDark();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -69,6 +70,15 @@ export class AppComponent {
 
      
     });
+  }
+
+
+
+  checkDark(){
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if(prefersDark.matches){
+      document.body.classList.toggle('dark');
+    }
   }
 }
 

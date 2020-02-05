@@ -15,12 +15,16 @@ export class MoviesPage implements OnInit {
   searchTerm: any = "";
   movie: any[];
   movieFilter: any[];
+  dark:boolean=true;
 
   /**
    * Constructor of our first page
    * @param movieService The movie Service to get data
    */
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.dark=prefersDark.matches;
+   }
 
   ngOnInit() {
     this.movie = [];
@@ -36,6 +40,16 @@ export class MoviesPage implements OnInit {
 
   setFilteredItems() {
     this.movie = this.filterItems(this.searchTerm);
+  }
+
+
+  darkMode(){
+    //const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    //if(prefersDark.matches){
+      this.dark= !this.dark;// es igual al inverso 
+      document.body.classList.toggle('dark');
+    //}
+  //}
   }
 
 
